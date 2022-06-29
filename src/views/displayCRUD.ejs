@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        th,
+        td {text-align: center;}
+        .btn-center {
+            margin: 5px 0px;
+        }
+    </style>
+
+    <title>GET CRUD</title>
+</head>
+
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Họ và tên</th>
+            <th>Số điện thoại</th>
+            <th>Mật khẩu</th>
+            <th>Giới tính</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+        </tr>
+        <% for(let i=0; i < dataTable.length; i++) { %>
+            <tr>
+              <td><%= dataTable[i].hoTen %></td>
+              <td><%= dataTable[i].sdt %></td>
+              <td><%= dataTable[i].matKhau %></td>
+              <td><%= dataTable[i].gioiTinh %></td>
+              <td><%= dataTable[i].diaChi %></td>
+              <td><%= dataTable[i].email %></td>
+              <td>
+                <a href ="/edit-crud?id=<%= dataTable[i].id %>" type="button" class="btn btn-primary btn-center ">Edit</a>
+                <a href =""    type="button" class="btn btn-danger btn-center">Delete</a>
+              </td>
+              <a ></a>
+              
+            </tr>
+         <% } %>
+
+    </table>
+</body>
+
+</html>
